@@ -55,9 +55,9 @@ function getDataUcapan() {
                 div.className = "mb-2";
                 div.style.borderBottom = "1px dotted #ccc";
                 div.innerHTML = `
-                    <div style='text-align:left; padding:20px;'>
+                    <div style='text-align:left; padding:20px; font-family:'Cormorant Infant', Sans-serif;'>
                         <p><i>"${row[3]}"</i></p>
-                        — <strong>${row[2]}<strong>&nbsp;&nbsp;&nbsp;<span class="text-muted" style="font-size:7pt;">at ${row[4]})</span>
+                        — <strong>${row[2]}</strong><br><span class="text-muted" style="font-size:7pt;">at ${row[4]}</span>
                     </div>
                 `;
                 divUcapan.appendChild(div);
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (element) {
             setTimeout(function(){
 				element.remove();
-			},1000);
+			},1700);
         }
     });
 });
