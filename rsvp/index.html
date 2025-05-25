@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Ucapan & RSVP
+	</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+	rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+	crossorigin="anonymous">
+	<link href="style.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<body>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v22.0&appId=771033985084304"></script>	
+	<div class="container mt-3 ">
+		<div class="row">
+		
+			<div class="col-md-12 mb-3 text-center">
+				<h5 class="font-sans">The Wedding of</h5>
+				<h1 id="nama-client" class="font-serif"></h1>
+			</div>
+			
+			<div class="col-md-6 mb-3">
+				<div class="card">
+					<div class="card-header text-center bg-secondary text-light">Ucapan</div>
+					<div class="card-body">
+						<p class="font-serif text-center">Merupakan kehormatan bagi kami menerima ucapan serta doa dari keluarga, kerabat, dan sahabat yang turut berbagi kebahagiaan di hari istimewa ini.</p>
+						<hr>
+						<div id="div-ucapan" class="dataContainer"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 mb-3">
+				<div class="card">
+					<div class="card-header text-center bg-secondary text-light">Daftar RSVP</div>
+					<div class="card-body">
+						<p class="font-serif text-center pb-3">Dengan tulus, kami menghargai setiap waktu yang disisihkan dan setiap langkah yang direncanakan untuk hadir di hari istimewa kami.</p>
+						<div class="table-responsive dataContainer" style="font-size:11pt;">
+							<table class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Nama</th>
+										<th>Ket</th>
+										<th>Jml</th>
+									</tr>
+								</thead>
+								<tbody id="div-rsvp"></tbody>
+							</table>
+							<button class="btn btn-primary mb-3 float-end" onclick="copyTableToClipboard()">Salin Tabel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<footer class="p-5 bg-dark mt-5 text-light" style="font-size: 11pt;">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="https://krafta-visio.github.io/portfolio/logo.png"/>
+						<p>Fotografi & Percetakan<p>
+						<b>Follow Us:</b>
+						<div class="fb-page" data-href="https://www.facebook.com/krafta.visio" data-tabs="photos/videos" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/krafta.visio" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/krafta.visio" target="_blank">krafta.</a></blockquote></div>
+						
+					</div>
+					<div class="col-md-4 text-light">
+						<h5 class="mb-3">Services</h5>
+						<p>Klik pada menu untuk melihat layanan kami,<p>
+						<ul>
+							<li><a href="https://krafta-visio.github.io/pricelist-photography/" target="_blank">Fotografi</a></li>
+							<li><a href="https://krafta-visio.github.io/katalog-undangan-cetak/" target="_blank">Cetak Undangan</a></li>
+							<li><a href="https://krafta-visio.github.io/katalog-undangan-web/" target="_blank">Undangan Web</a></li>
+							<li><a href="https://krafta-visio.github.io/portfolio/" target="_blank">Portfolio</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-light">
+						<h5 class="mb-3">Kontak</h5>
+						<p class="text-small mt-3">
+						Jl. Sungai Bongka, Kel. Uemalingku, Ampana<br>
+						WA : 62813-7070-5753  |  62895-2963-5753<br>
+						<a href="https://krafta-visio.github.io/homepage/" target="_blank">Visit Homepage</a>
+						</p>
+					</div>
+				</div>
+			</footer>			
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+	crossorigin="anonymous">
+	</script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="script.js" crossorigin="anonymous"></script>
+</body>
+</html>
