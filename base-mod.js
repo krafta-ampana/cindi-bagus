@@ -146,6 +146,12 @@ function kirimKonfirmasiKehadiran() {
 // 3. DOM Loaded Event
 // ==============================
 
+// Mencegah scroll otomatis ke posisi sebelumnya saat reload
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Jalankan saat DOM sudah siap (struktur HTML selesai dimuat)
 document.addEventListener("DOMContentLoaded", function () {
     // Tampilkan nama tamu dari URL
     const namaTamuEl = document.getElementById("nama_tamu_undangan");
@@ -169,12 +175,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnSimpanRSVP) {
         btnSimpanRSVP.addEventListener("click", kirimKonfirmasiKehadiran);
     }
+});
 
-    // Hapus elemen dengan XPath
+// Jalankan saat semua resource (gambar, font, video) benar-benar selesai dimuat
+window.onload = function () {
+    // Hapus elemen tertentu dengan XPath
     const xpaths = [
         "/html/body/div/div/section[2]/div/div[1]/div/section/div/div/div/div[1]",
         "/html/body/div/div/section/div/div[2]/div/section[1]/div/div/div/div[1]"
     ];
+
     xpaths.forEach(path => {
         const result = document.evaluate(
             path,
@@ -185,22 +195,11 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         const element = result.singleNodeValue;
         if (element) {
-            setTimeout(function(){
-				element.remove();
-			},1700);
+            element.remove(); // Hapus setelah semua resource selesai dimuat
         }
     });
-});
 
-// ==============================
-// 4. Scroll Handling
-// ==============================
-
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
-
-window.onload = function () {
+    // Scroll otomatis ke elemen tertentu setelah delay
     setTimeout(function () {
         const target = document.querySelector('div[data-elementor-id="183279"]');
         if (target) {
@@ -208,3 +207,5 @@ window.onload = function () {
         }
     }, 1600);
 };
+
+
